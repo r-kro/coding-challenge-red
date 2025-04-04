@@ -11,6 +11,11 @@ class OrderController extends Controller
 {
     protected ProviderPortalInterface $provider;
 
+    public function __construct(ProviderPortalInterface $provider)
+    {
+        $this->provider = $provider;
+    }
+
     public function index(Request $request)
     {
         $query = Order::query();
